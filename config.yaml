@@ -1,0 +1,5 @@
+log_file: logs/access.log
+train_file: logs/train_logs.txt
+model_file: models/anomaly_model.pkl
+sleep_interval: 0.2
+slack_webhook: "https://hooks.slack.com/services/YOUR/WEBHOOK/URL"
