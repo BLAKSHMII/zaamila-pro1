@@ -11,6 +11,9 @@ features = [featurize(parse_log(l)) for l in lines if parse_log(l)]
 
 if not features:
     raise ValueError("🚨 Training data empty! Add valid logs")
+# Debug prints to verify features
+print("DEBUG: Number of features =", len(features))
+print("DEBUG: First feature =", features[0])
 
 # Train Isolation Forest
 model = IsolationForest(contamination=0.02, random_state=42)
@@ -21,4 +24,4 @@ os.makedirs("models", exist_ok=True)
 with open(MODEL_FILE, "wb") as f:
     pickle.dump(model, f)
 
-print("✅ Week 1: Model trained and saved successfully!")
+print("Week 1: Model trained and saved successfully!")
