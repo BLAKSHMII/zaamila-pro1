@@ -25,3 +25,9 @@ for line in tail_file(LOG_FILE):
             print("🚨 Anomaly Detected:", line.strip())
         else:
             print("OK:", line.strip())
+#week-3
+from alert import send_slack
+
+if result == -1:
+    print("🚨 Anomaly Detected:", line.strip())
+    send_slack(f"🚨 Anomaly detected: {line.strip()}")
